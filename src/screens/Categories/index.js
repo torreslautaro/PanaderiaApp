@@ -3,9 +3,9 @@ import CategoryItem from "../../components/CategoryItem"
 import {categories} from '../../constants'
 import styles from "../../components/CategoryItem/style"
 
-const Categories = ({navigation, route}) => {
+const Categories = ({navigation}) => {
   const onSelected = (item) => {
-    console.warn(item)
+    navigation.navigate('Products', {categoryId : item.id})
   }
 
   const renderItem = ({item}) => <CategoryItem item={item} onSelected={onSelected} />
